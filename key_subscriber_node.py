@@ -5,7 +5,7 @@ from std_msgs.msg import String
 from geometry_msgs.msg import Twist
 
 # 속도 설정
-LINEAR_SPEED = 0.1
+LINEAR_SPEED = 0.05
 ANGULAR_SPEED = 0.5
 
 
