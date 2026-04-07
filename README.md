@@ -1,4 +1,4 @@
-# scripts for 2026 1학기 ROS 수업용 
+# scripts for 2026 1학기 ROS 수업용 코드 
 
 ### 이곳의 코드를 다운로드 하여 사용하세요! 
 
