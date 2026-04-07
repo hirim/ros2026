@@ -6,7 +6,10 @@ publisher_node.py
 
 subscriber_node.py
 
-##key_publisher_node.py
-##key_subscriber_node.py
+key_publisher_node.py
 
-##color_publisher_node.py
+key_subscriber_node.py
+
+color_publisher_node.py
+
+sign_dector_node.py
