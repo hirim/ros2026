@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 import rospy
 from std_msgs.msg import String
 from sensor_msgs.msg import Image
@@ -38,13 +36,13 @@ def callback(msg):
 
     out_msg = String()
 
-    # 판단 ⭐
+    # 판단
     if red_count > 5000:
         out_msg.data = 's'
     elif green_count > 5000:
         out_msg.data = 'w'
     else:
-        pass 
+        return
 
     pub.publish(out_msg)
 
@@ -55,12 +53,20 @@ def callback(msg):
     cv2.waitKey(1)
 
 
-rospy.init_node('color_publisher')
+def main():
+    global pub
 
-# 출력 토픽 변경 ⭐
-pub = rospy.Publisher('/key_input', String, queue_size=10)
+    # 노드 초기화
+    rospy.init_node('color_publisher_node')
 
-# 입력 토픽 변경 ⭐
-rospy.Subscriber('/camera/image', Image, callback)
+    # 퍼블리셔
+    pub = rospy.Publisher('/key_input', String, queue_size=10)
 
-rospy.spin()
+    # 서브스크라이버
+    rospy.Subscriber('/camera/image', Image, callback)
+
+    rospy.spin()
+
+
+if __name__ == '__main__':
+    main()
